@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan Bank - Profile</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-landmark"></i>
+                <span>Khan Bank</span>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="checking.html"><i class="fas fa-credit-card"></i> Checking</a></li>
+                <li><a href="savings.html"><i class="fas fa-piggy-bank"></i> Savings</a></li>
+                <li><a href="transfer.html"><i class="fas fa-exchange-alt"></i> Transfer</a></li>
+                <li><a href="profile.html" class="active"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-user"></i> Profile Settings</h1>
+                <p class="subtitle">Manage your personal information</p>
+            </div>
+            
+            <div class="profile-container">
+                <div class="profile-card">
+                    <div class="profile-avatar">
+                        <div class="avatar-circle">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h2 id="profileName"></h2>
+                    </div>
+                    
+                    <form id="profileForm" class="profile-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">
+                                    <i class="fas fa-user"></i>
+                                    First Name
+                                </label>
+                                <input type="text" id="firstName" placeholder="First Name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">
+                                    <i class="fas fa-user"></i>
+                                    Last Name
+                                </label>
+                                <input type="text" id="lastName" placeholder="Last Name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">
+                                <i class="fas fa-envelope"></i>
+                                Email Address
+                            </label>
+                            <input type="email" id="email" placeholder="your.email@example.com" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">
+                                <i class="fas fa-phone"></i>
+                                Phone Number
+                            </label>
+                            <input type="tel" id="phone" placeholder="(123) 456-7890" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">
+                                <i class="fas fa-map-marker-alt"></i>
+                                Address
+                            </label>
+                            <textarea id="address" placeholder="Your address" rows="3" required></textarea>
+                        </div>
+                        
+                        <div id="profileMessage" class="message" style="display: none;"></div>
+                        
+                        <div class="button-group">
+                            <button type="submit" class="btn-primary">
+                                <i class="fas fa-save"></i>
+                                <span>Save Changes</span>
+                            </button>
+                            <button type="button" id="cancelBtn" class="btn-secondary">
+                                <i class="fas fa-times"></i>
+                                <span>Cancel</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+    <script>
+        checkAuth();
+        initNavigation();
+        loadProfilePage();
+    </script>
+</body>
+</html>
