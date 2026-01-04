@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan Bank - Checking Account</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-landmark"></i>
+                <span>Khan Bank</span>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="checking.html" class="active"><i class="fas fa-credit-card"></i> Checking</a></li>
+                <li><a href="savings.html"><i class="fas fa-piggy-bank"></i> Savings</a></li>
+                <li><a href="transfer.html"><i class="fas fa-exchange-alt"></i> Transfer</a></li>
+                <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1><i class="fas fa-credit-card"></i> Checking Account</h1>
+                <p class="subtitle">View your checking account details and transactions</p>
+            </div>
+            
+            <div class="account-details-card">
+                <div class="account-info">
+                    <div class="info-item">
+                        <span class="info-label">Account Type</span>
+                        <span class="info-value">Checking</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Account Number</span>
+                        <span class="info-value">****1234</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Available Balance</span>
+                        <span class="info-value balance-large" id="checkingBalance">$0.00</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="transactions-section">
+                <div class="section-header">
+                    <h2 class="section-title">Transaction History</h2>
+                </div>
+                <div class="transactions-table" id="checkingTransactions">
+                    <!-- Transactions will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+    <script>
+        checkAuth();
+        initNavigation();
+        loadAccountPage('checking');
+    </script>
+</body>
+</html>
