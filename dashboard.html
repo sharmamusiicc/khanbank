@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khan Bank - Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <i class="fas fa-landmark"></i>
+                <span>Khan Bank</span>
+            </div>
+            
+            <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="dashboard.html" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="checking.html"><i class="fas fa-credit-card"></i> Checking</a></li>
+                <li><a href="savings.html"><i class="fas fa-piggy-bank"></i> Savings</a></li>
+                <li><a href="transfer.html"><i class="fas fa-exchange-alt"></i> Transfer</a></li>
+                <li><a href="profile.html"><i class="fas fa-user"></i> Profile</a></li>
+                <li><a href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <main class="main-content">
+        <div class="container">
+            <div class="page-header">
+                <h1>Welcome back, <span id="userName"></span>!</h1>
+                <p class="subtitle">Here's your account overview</p>
+            </div>
+            
+            <div class="account-cards">
+                <div class="account-card checking-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <span class="account-type">Checking Account</span>
+                    </div>
+                    <div class="card-balance">
+                        <span class="balance-label">Available Balance</span>
+                        <h2 class="balance-amount" id="checkingBalance">$0.00</h2>
+                    </div>
+                    <div class="card-footer">
+                        <a href="checking.html" class="card-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                
+                <div class="account-card savings-card">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <span class="account-type">Savings Account</span>
+                    </div>
+                    <div class="card-balance">
+                        <span class="balance-label">Available Balance</span>
+                        <h2 class="balance-amount" id="savingsBalance">$0.00</h2>
+                    </div>
+                    <div class="card-footer">
+                        <a href="savings.html" class="card-link">View Details <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quick-actions">
+                <h2 class="section-title">Quick Actions</h2>
+                <div class="action-buttons">
+                    <a href="transfer.html" class="action-btn">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Transfer Money</span>
+                    </a>
+                    <a href="checking.html" class="action-btn">
+                        <i class="fas fa-receipt"></i>
+                        <span>View Transactions</span>
+                    </a>
+                    <a href="profile.html" class="action-btn">
+                        <i class="fas fa-user-edit"></i>
+                        <span>Edit Profile</span>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="recent-transactions">
+                <h2 class="section-title">Recent Transactions</h2>
+                <div class="transactions-list" id="recentTransactions">
+                    <!-- Transactions will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+    
+    <script src="script.js"></script>
+    <script>
+        checkAuth();
+        initNavigation();
+        loadDashboard();
+    </script>
+</body>
+</html>
